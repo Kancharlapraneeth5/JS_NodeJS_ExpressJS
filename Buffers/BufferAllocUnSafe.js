@@ -1,0 +1,2 @@
+const unsafeBuf = Buffer.allocUnsafe(5);
+console.log(unsafeBuf); // <Buffer ?? ?? ?? ?? ??>
