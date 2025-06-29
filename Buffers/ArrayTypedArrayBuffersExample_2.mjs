@@ -57,4 +57,11 @@ const f1 = fileData.readFloatBE(0);
 const f2 = fileData.readFloatBE(4);
 const f3 = fileData.readFloatBE(8);
 
+// without read methods -- Just gives us the raw bytes 
+console.log("read without read methods :", fileData);
+
+// with the read methods -- will give us the float values (readable).
 console.log("Read back:", [f1, f2, f3]);
+
+// ⭐⭐⭐
+// READ/WRITE methods are used to read/write the data in the buffer, if we don't use the read/write methods then it will just give us the raw bytes of the buffer which is not readable.
