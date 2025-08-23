@@ -62,6 +62,10 @@ const req = https.request(
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      // Why we used Buffer.byteLength() instead of jsonBody.length?
+      // Because jsonBody.length gives the number of characters in the string,
+      // while Buffer.byteLength() gives the actual byte size of the string
+      // with only .length () it may miss the non-ASCII characters like é, ñ, ü, emojis etc.
       "Content-Length": Buffer.byteLength(jsonBody),
       Accept: "application/json",
     },
